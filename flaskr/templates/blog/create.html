@@ -7,11 +7,15 @@
 {% block carousel %}{% endblock %}
 
 {% block content %}
-  <form method="post">
-    <label for="title">Title</label>
-    <input name="title" id="title" value="{{ request.form['title'] }}" required>
-    <label for="body">Body</label>
-    <textarea name="body" id="body">{{ request.form['body'] }}</textarea>
-    <input type="submit" value="Save">
+  <form method="post">  
+    <div class="mb-3">
+    <label for="title" class="form-label">Email address</label>
+    <input name="title" class="form-control" id="title" placeholder="Blog title" value="{{ request.form['title'] }}" required>
+  </div>
+  <div class="mb-3">
+    <label for="body" class="form-label">Content</label>
+    <textarea name="body" class="form-control" id="body" rows="3">{{ request.form['body'] }}</textarea><br />
+    <input type="submit" class="btn btn-success" value="Save">
+  </div>
   </form>
 {% endblock %}

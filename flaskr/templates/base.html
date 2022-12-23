@@ -72,8 +72,8 @@
         {% if g.user %}
           <li class="nav-item"><a class="nav-link disabled" href="#">{{"username:" + g.user['username'] }}</a></li>
           <li class="nav-item"><a class="action nav-link" href="{{ url_for('blog.create') }}">Yeni blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{ url_for('auth.logout') }}">Çıkış yap</a></li>
           <li class="nav-item"><a class="nav-link" href="{{ url_for('blog.users') }}">yeni üyeler</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('auth.logout') }}">Çıkış yap</a></li>
         {% else %}
           <li class="nav-item"><a class="nav-link" href="{{ url_for('auth.register') }}">Kayıt ol</a></li>
           <li class="nav-item"><a class="nav-link" href="{{ url_for('auth.login') }}">Giriş yap</a></li>

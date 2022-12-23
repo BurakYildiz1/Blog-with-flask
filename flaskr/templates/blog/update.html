@@ -7,15 +7,20 @@
 {% block carousel %}{% endblock %}
 
 {% block content %}
-  <form method="post">
-    <label for="title">Title</label>
-    <input name="title" id="title" value="{{ request.form['title'] or post['title'] }}" required>
-    <label for="body">Body</label>
-    <textarea name="body" id="body">{{ request.form['body'] or post['body'] }}</textarea>
-    <input type="submit" value="Save">
+  <form method="post">  
+    <div class="mb-3">
+    <label for="title" class="form-label">Email address</label>
+    <input name="title" class="form-control" id="title" placeholder="Blog title" value="{{ request.form['title'] or post['title'] }}" required>
+  </div>
+  <div class="mb-3">
+    <label for="body" class="form-label">Content</label>
+    <textarea name="body" class="form-control" id="body" rows="3">{{ request.form['body'] or post['body'] }}</textarea><br />
+    <input type="submit" class="btn btn-success" value="Save">
+  </div>
   </form>
   <hr>
   <form action="{{ url_for('blog.delete', id=post['id']) }}" method="post">
-    <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+    <label for="btn" class="form-label mb-3">Delete Blog</label><br /> 
+    <input class="danger" type="submit" id="btn" value="Delete" onclick="return confirm('Are you sure?');">
   </form>
 {% endblock %}
